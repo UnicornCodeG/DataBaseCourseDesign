@@ -14,15 +14,13 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class LoginManager{
 
-    //控制并发
+
+    //控制并发,userName--session
     private static ConcurrentHashMap<String, HttpSession> sessionMap=new ConcurrentHashMap<>();
-
-
 
     public void addSession(String userName, HttpSession session){
         System.out.println(session.getId()+"登陆进来了");
         sessionMap.putIfAbsent(userName,session);
-        System.out.println("map的大小："+sessionMap.size());
     }
 
     public HttpSession querySession(String userName){
@@ -31,9 +29,25 @@ public class LoginManager{
 
     public void updateSession(String userName,HttpSession newSession){
         HttpSession session = sessionMap.get(userName);
-        System.out.println(newSession.getId()+" 挤掉了  "+session.getId());
-        session.invalidate();
+        //session活跃超时，自动销毁，执行报错
+        try {
+            session.invalidate();
+            System.out.println(newSession.getId()+" 挤掉了  "+session.getId());
+        } catch (Exception e) {
+            addSession(userName,newSession);
+            return;
+        }
         sessionMap.put(userName,newSession);
     }
 
+    public void deleteSession(String userName){
+        sessionMap.remove(userName);
+        HttpSession session = sessionMap.get(userName);
+        session.invalidate();
+    }
+
+    //活跃的session数
+    public Integer getMapSize(){
+        return sessionMap.size();
+    }
 }

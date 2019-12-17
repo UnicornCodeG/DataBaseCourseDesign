@@ -27,24 +27,6 @@ public class User {
 
     private String updateOpr;
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", password='" + password + '\'' +
-                ", userName='" + userName + '\'' +
-                ", realName='" + realName + '\'' +
-                ", sex='" + sex + '\'' +
-                ", roleId=" + roleId +
-                ", email='" + email + '\'' +
-                ", telphone='" + telphone + '\'' +
-                ", createTime=" + createTime +
-                ", createOpr='" + createOpr + '\'' +
-                ", updateTime=" + updateTime +
-                ", updateOpr='" + updateOpr + '\'' +
-                '}';
-    }
-
     public Integer getId() {
         return id;
     }

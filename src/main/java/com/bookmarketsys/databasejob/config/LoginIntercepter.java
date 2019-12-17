@@ -20,6 +20,8 @@ public class LoginIntercepter implements HandlerInterceptor  {
 
         HttpSession session = request.getSession();
         Object userName = session.getAttribute("userName");
+        System.out.println("拦截器："+userName);
+        System.out.println("session:"+session.isNew());
         if (userName==null) {
             return false;
         }else{

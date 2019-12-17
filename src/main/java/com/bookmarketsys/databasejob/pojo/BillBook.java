@@ -11,6 +11,8 @@ public class BillBook {
 
     private Integer count;
 
+    private Double amount;
+
     private Date createTime;
 
     private String createOpr;
@@ -49,6 +51,14 @@ public class BillBook {
 
     public void setCount(Integer count) {
         this.count = count;
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
     }
 
     public Date getCreateTime() {

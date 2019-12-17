@@ -15,7 +15,4 @@ public interface LoginService {
     void register(User user);
     //登陆
     List<User> login(String name, String passWord);
-    //登出
-    void loginOut();
-
 }

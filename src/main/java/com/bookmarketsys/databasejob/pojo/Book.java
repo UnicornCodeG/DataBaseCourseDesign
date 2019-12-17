@@ -17,6 +17,10 @@ public class Book {
 
     private Integer menuId;
 
+    private String simplePath;
+
+    private Double price;
+
     private Date createTime;
 
     private String createOpr;
@@ -81,6 +85,22 @@ public class Book {
         this.menuId = menuId;
     }
 
+    public String getSimplePath() {
+        return simplePath;
+    }
+
+    public void setSimplePath(String simplePath) {
+        this.simplePath = simplePath == null ? null : simplePath.trim();
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
     public Date getCreateTime() {
         return createTime;
     }
@@ -111,5 +131,24 @@ public class Book {
 
     public void setUpdateOpr(String updateOpr) {
         this.updateOpr = updateOpr == null ? null : updateOpr.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                ", press='" + press + '\'' +
+                ", translationAuthor='" + translationAuthor + '\'' +
+                ", type='" + type + '\'' +
+                ", menuId=" + menuId +
+                ", simplePath='" + simplePath + '\'' +
+                ", price=" + price +
+                ", createTime=" + createTime +
+                ", createOpr='" + createOpr + '\'' +
+                ", updateTime=" + updateTime +
+                ", updateOpr='" + updateOpr + '\'' +
+                '}';
     }
 }

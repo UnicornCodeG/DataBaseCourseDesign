@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName LoginController
@@ -27,7 +29,6 @@ public class LoginController {
     LoginService loginService;
     @Autowired
     LoginManager loginManager;
-
 
 
     @RequestMapping("/register")
@@ -57,29 +58,45 @@ public class LoginController {
         if (users.size()==0){
             return ResultUtil.error(ResultEnum.ERROR.getCode(),"用户名或密码错误");
         }
-        //服务端的session存在生存时间，默认30分钟后自动销毁
-        //所以被拦截的请求session中肯定是未经过处理的，里面没有任何数据
-        //过期登陆和重复登陆，都会导致请求session和mapSession不一致
 
         HttpSession session = request.getSession();
         session.setAttribute("userName",userName);
-
+        Integer id = users.get(0).getId();
+        System.out.println(id);
+        session.setAttribute("userId", id);
         HttpSession mapSession = loginManager.querySession(userName);
         //1.map中没存当前用户的userName，直接add
         //2.在30分钟内，有新的session访问，update
-        //3.30分钟后，mapsession！=null，id不相等，直接add
-        //4.30分钟后，session重置
-        if (mapSession==null || mapSession.getId()==session.getId()||session.isNew()){
+        if (mapSession==null || mapSession.getId()==session.getId()){
             loginManager.addSession(userName,session);
         }else {
             loginManager.updateSession(userName,session);
         }
-
-        return ResultUtil.success("登陆成功,返回roleId",users.get(0).getRoleId()) ;
+        Map<String,Object> map=new HashMap<>();
+        map.put("roleId",users.get(0).getRoleId());
+        map.put("userId",users.get(0).getId());
+        map.put("userName",users.get(0).getUserName());
+        return ResultUtil.success("登陆成功,返回roleId",map) ;
     }
     @RequestMapping("/loginOut")
-    public Result loginOut(String userName){
+    Result loginOut(String userName){
+        //可以登出一定是session有效
+        loginManager.deleteSession(userName);
+        return ResultUtil.success("登出成功");
+    }
 
-        return null;
+    //在线人数
+    @RequestMapping("/customerOnline")
+    Result customerOnline(){
+        return ResultUtil.success("customerOnline",loginManager.getMapSize());
+    }
+
+
+    //得到当前用户id
+    @RequestMapping("/getUserId")
+    Result getUserId(HttpSession session){
+        Integer userId = (Integer) session.getAttribute("userId");
+        System.out.println(userId);
+        return ResultUtil.success("得到用户id",userId);
     }
 }

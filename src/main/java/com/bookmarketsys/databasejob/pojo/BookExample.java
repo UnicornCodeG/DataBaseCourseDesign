@@ -575,6 +575,136 @@ public class BookExample {
             return (Criteria) this;
         }
 
+        public Criteria andSimplePathIsNull() {
+            addCriterion("simple_path is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSimplePathIsNotNull() {
+            addCriterion("simple_path is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSimplePathEqualTo(String value) {
+            addCriterion("simple_path =", value, "simplePath");
+            return (Criteria) this;
+        }
+
+        public Criteria andSimplePathNotEqualTo(String value) {
+            addCriterion("simple_path <>", value, "simplePath");
+            return (Criteria) this;
+        }
+
+        public Criteria andSimplePathGreaterThan(String value) {
+            addCriterion("simple_path >", value, "simplePath");
+            return (Criteria) this;
+        }
+
+        public Criteria andSimplePathGreaterThanOrEqualTo(String value) {
+            addCriterion("simple_path >=", value, "simplePath");
+            return (Criteria) this;
+        }
+
+        public Criteria andSimplePathLessThan(String value) {
+            addCriterion("simple_path <", value, "simplePath");
+            return (Criteria) this;
+        }
+
+        public Criteria andSimplePathLessThanOrEqualTo(String value) {
+            addCriterion("simple_path <=", value, "simplePath");
+            return (Criteria) this;
+        }
+
+        public Criteria andSimplePathLike(String value) {
+            addCriterion("simple_path like", value, "simplePath");
+            return (Criteria) this;
+        }
+
+        public Criteria andSimplePathNotLike(String value) {
+            addCriterion("simple_path not like", value, "simplePath");
+            return (Criteria) this;
+        }
+
+        public Criteria andSimplePathIn(List<String> values) {
+            addCriterion("simple_path in", values, "simplePath");
+            return (Criteria) this;
+        }
+
+        public Criteria andSimplePathNotIn(List<String> values) {
+            addCriterion("simple_path not in", values, "simplePath");
+            return (Criteria) this;
+        }
+
+        public Criteria andSimplePathBetween(String value1, String value2) {
+            addCriterion("simple_path between", value1, value2, "simplePath");
+            return (Criteria) this;
+        }
+
+        public Criteria andSimplePathNotBetween(String value1, String value2) {
+            addCriterion("simple_path not between", value1, value2, "simplePath");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriceIsNull() {
+            addCriterion("price is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriceIsNotNull() {
+            addCriterion("price is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriceEqualTo(Double value) {
+            addCriterion("price =", value, "price");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriceNotEqualTo(Double value) {
+            addCriterion("price <>", value, "price");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriceGreaterThan(Double value) {
+            addCriterion("price >", value, "price");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriceGreaterThanOrEqualTo(Double value) {
+            addCriterion("price >=", value, "price");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriceLessThan(Double value) {
+            addCriterion("price <", value, "price");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriceLessThanOrEqualTo(Double value) {
+            addCriterion("price <=", value, "price");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriceIn(List<Double> values) {
+            addCriterion("price in", values, "price");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriceNotIn(List<Double> values) {
+            addCriterion("price not in", values, "price");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriceBetween(Double value1, Double value2) {
+            addCriterion("price between", value1, value2, "price");
+            return (Criteria) this;
+        }
+
+        public Criteria andPriceNotBetween(Double value1, Double value2) {
+            addCriterion("price not between", value1, value2, "price");
+            return (Criteria) this;
+        }
+
         public Criteria andCreateTimeIsNull() {
             addCriterion("create_time is null");
             return (Criteria) this;

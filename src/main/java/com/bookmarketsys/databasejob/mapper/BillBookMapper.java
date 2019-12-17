@@ -2,8 +2,9 @@ package com.bookmarketsys.databasejob.mapper;
 
 import com.bookmarketsys.databasejob.pojo.BillBook;
 import com.bookmarketsys.databasejob.pojo.BillBookExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface BillBookMapper {
     int countByExample(BillBookExample example);

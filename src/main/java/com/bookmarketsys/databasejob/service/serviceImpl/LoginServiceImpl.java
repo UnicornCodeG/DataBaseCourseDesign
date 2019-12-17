@@ -21,10 +21,8 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     UserMapper userMapper;
 
-
     @Override
     public void register(User user) {
-
         userMapper.insert(user);
     }
 
@@ -38,8 +36,4 @@ public class LoginServiceImpl implements LoginService {
         return users;
     }
 
-    @Override
-    public void loginOut() {
-
-    }
 }

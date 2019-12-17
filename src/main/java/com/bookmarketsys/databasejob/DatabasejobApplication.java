@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.bookmarketsys.databasejob.mapper")
 public class DatabasejobApplication {
 
+
     public static void main(String[] args) {
         SpringApplication.run(DatabasejobApplication.class, args);
     }

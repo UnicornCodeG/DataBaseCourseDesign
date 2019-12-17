@@ -1,5 +1,7 @@
 package com.bookmarketsys.databasejob.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Bill {
@@ -9,12 +11,18 @@ public class Bill {
 
     private String note;
 
-    private String amount;
+    private Date payTime;
 
+    private Double amount;
+
+    private String status;
+
+    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss" ,timezone = "GMT+8")
     private Date createTime;
 
     private String createOpr;
 
+    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss" ,timezone = "GMT+8")
     private Date updateTime;
 
     private String updateOpr;
@@ -43,12 +51,28 @@ public class Bill {
         this.note = note == null ? null : note.trim();
     }
 
-    public String getAmount() {
+    public Date getPayTime() {
+        return payTime;
+    }
+
+    public void setPayTime(Date payTime) {
+        this.payTime = payTime;
+    }
+
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
-        this.amount = amount == null ? null : amount.trim();
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status == null ? null : status.trim();
     }
 
     public Date getCreateTime() {
