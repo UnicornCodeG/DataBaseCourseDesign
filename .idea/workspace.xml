@@ -2,19 +2,81 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b17540e9-9fdc-4af9-af49-737e9fe83c5a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/controller/ShoppingCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/controller/ShoppingCartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/controller/SysAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/controller/SysAdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/pojo/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/pojo/Bill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/pojo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/ShoppingCartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/ShoppingCartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/SysAdminOprService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/SysAdminOprService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/BillAdminOprServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/BillAdminOprServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/BookAdminOprServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/BookAdminOprServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/ShoppingCartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/ShoppingCartServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/SysAdminOprServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/SysAdminOprServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/vo/CreateOrderVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/vo/CreateOrderVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/vo/SettlementAmountVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/vo/SettlementAmountVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/db/book_market_system.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/BillBookMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/BillMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/BookDetailMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/BookMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/MenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/RepositoryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/RoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/21.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/22.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/23.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/24.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/25.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/26.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/27.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/28.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/29.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/30.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/31.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/32.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/33.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/34.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/35.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/36.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/37.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/38.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/39.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/40.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/41.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/42.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/43.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/44.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/45.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/46.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/47.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/48.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/49.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/50.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/databasejob-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bookmarketsys.databasejob.DatabasejobApplicationTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bookmarketsys.databasejob.TestEasy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bookmarketsys.databasejob.serviceImpl.IndexServiceImplTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bookmarketsys.databasejob.serviceImpl.LoginServiceImplTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/com.bookmarketsys.databasejob.DatabasejobApplicationTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/com.bookmarketsys.databasejob.TestEasy.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/com.bookmarketsys.databasejob.serviceImpl.IndexServiceImplTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/com.bookmarketsys.databasejob.serviceImpl.LoginServiceImplTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/config/MvcConfig.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -266,7 +328,7 @@
       <workItem from="1576552524364" duration="23669000" />
       <workItem from="1576627720023" duration="21604000" />
       <workItem from="1576659620742" duration="156000" />
-      <workItem from="1576660895774" duration="14636000" />
+      <workItem from="1576660895774" duration="14943000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0初次提交">
       <created>1575448873112</created>
@@ -317,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576633291471</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="v1.4除上传分页未做，基本完成">
+      <created>1576677463762</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1576677463762</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,6 +412,7 @@
     <MESSAGE value="v1.2对后台管理进行修改" />
     <MESSAGE value="v1.3对订单部分进行修改调整" />
     <MESSAGE value="v1.3.1小修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.3.1小修改" />
+    <MESSAGE value="v1.4除上传分页未做，基本完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.4除上传分页未做，基本完成" />
   </component>
 </project>
