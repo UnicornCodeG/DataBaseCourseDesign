@@ -62,20 +62,7 @@
       <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/7.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/8.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/target/classes/static/img/simple/9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/databasejob-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bookmarketsys.databasejob.DatabasejobApplicationTests.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bookmarketsys.databasejob.TestEasy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bookmarketsys.databasejob.serviceImpl.IndexServiceImplTest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.bookmarketsys.databasejob.serviceImpl.LoginServiceImplTest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/com.bookmarketsys.databasejob.DatabasejobApplicationTests.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/com.bookmarketsys.databasejob.TestEasy.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/com.bookmarketsys.databasejob.serviceImpl.IndexServiceImplTest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/com.bookmarketsys.databasejob.serviceImpl.LoginServiceImplTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/config/MvcConfig.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -180,7 +167,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LoginServiceImplTest.test02">
+  <component name="RunManager" selected="Spring Boot.DatabasejobApplication">
     <configuration name="IndexServiceImplTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BookMarketSys" />
       <extension name="coverage">
@@ -328,7 +315,7 @@
       <workItem from="1576552524364" duration="23669000" />
       <workItem from="1576627720023" duration="21604000" />
       <workItem from="1576659620742" duration="156000" />
-      <workItem from="1576660895774" duration="14943000" />
+      <workItem from="1576660895774" duration="15201000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0初次提交">
       <created>1575448873112</created>
@@ -386,7 +373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576677463762</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="v1.4开启拦截器">
+      <created>1576677776462</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1576677776462</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -413,6 +407,7 @@
     <MESSAGE value="v1.3对订单部分进行修改调整" />
     <MESSAGE value="v1.3.1小修改" />
     <MESSAGE value="v1.4除上传分页未做，基本完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.4除上传分页未做，基本完成" />
+    <MESSAGE value="v1.4开启拦截器" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.4开启拦截器" />
   </component>
 </project>
