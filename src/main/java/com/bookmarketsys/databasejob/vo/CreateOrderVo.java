@@ -10,7 +10,7 @@ import java.util.List;
  **/
 public class CreateOrderVo {
     private List<SettlementAmountVO> settlementAmountVO;
-    private Double amount;
+    private Double amount;//整个订单的总价
     private Integer userId;
     private String note;
 

@@ -33,6 +33,16 @@ public class Book {
 
     private String updateOpr;
 
+    private String menuName;
+
+    public String getMenuName() {
+        return menuName;
+    }
+
+    public void setMenuName(String menuName) {
+        this.menuName = menuName;
+    }
+
     public Integer getId() {
         return id;
     }

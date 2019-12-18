@@ -1,5 +1,6 @@
 package com.bookmarketsys.databasejob.service.serviceImpl;
 
+import com.bookmarketsys.databasejob.mapper.MenuMapper;
 import com.bookmarketsys.databasejob.mapper.UserMapper;
 import com.bookmarketsys.databasejob.pojo.User;
 import com.bookmarketsys.databasejob.pojo.UserExample;
@@ -19,7 +20,8 @@ public class SysAdminOprServiceImpl implements SysAdminOprService {
 
     @Autowired
     UserMapper userMapper;
-
+    @Autowired
+    MenuMapper menuMapper;
     @Override
     public User deleteBillAdmin(int id) {
         User user = userMapper.selectByPrimaryKey(id);
@@ -89,6 +91,10 @@ public class SysAdminOprServiceImpl implements SysAdminOprService {
         UserExample userExample = new UserExample();
         userExample.createCriteria().andRoleIdEqualTo(roleId);
         List<User> userList = userMapper.selectByExample(userExample);
+        for (User user : userList) {
+            String menuName = menuMapper.selectByPrimaryKey(user.getRoleId()).getMenuName();
+            user.setMenuName(menuName);
+        }
         return userList;
     }
 
@@ -107,6 +113,10 @@ public class SysAdminOprServiceImpl implements SysAdminOprService {
         UserExample userExample=new UserExample();
         userExample.createCriteria().andUserNameLike(username);
         List<User> users=userMapper.selectByExample(userExample);
+        for (User user : users) {
+            String menuName = menuMapper.selectByPrimaryKey(user.getRoleId()).getMenuName();
+            user.setMenuName(menuName);
+        }
         return  users;
 
     }

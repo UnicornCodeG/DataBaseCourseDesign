@@ -5,6 +5,7 @@ import com.bookmarketsys.databasejob.dto.BookAndNumberDTO;
 import com.bookmarketsys.databasejob.mapper.*;
 import com.bookmarketsys.databasejob.pojo.*;
 import com.bookmarketsys.databasejob.service.ShoppingCartService;
+import com.bookmarketsys.databasejob.vo.BillBookVO;
 import com.bookmarketsys.databasejob.vo.CreateOrderVo;
 import com.bookmarketsys.databasejob.vo.SettlementAmountVO;
 import com.bookmarketsys.databasejob.vo.ShowShoppingCartVO;
@@ -49,8 +50,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         bill.setAmount(amount);
         bill.setUserId(userId);
         bill.setNote(createOrderVo.getNote());
-        //0表示未完成，1表示已完成
-        bill.setStatus("0");
+        bill.setStatus("未支付");
         User user = userMapper.selectByPrimaryKey(userId);
         bill.setCreateOpr(user.getUserName());
         Date createTime = new Date();
@@ -64,7 +64,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         for (SettlementAmountVO settlementAmountVO : settlementAmountVOList) {
             Integer bookId = settlementAmountVO.getBookId();
             Integer number = settlementAmountVO.getNumber();
-            Double billBookAmount = settlementAmountVO.getAmount();
+            Double billBookAmount = settlementAmountVO.getSinglePrice()*number;
             BillBook billBook = new BillBook();
             billBook.setAmount(billBookAmount);
             billBook.setBillId(billId);
@@ -116,5 +116,33 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         return cartVOList;
     }
 
+    //显示订单中的书本信息
+    @Override
+    public List<BillBookVO> selectBillBookDetail(Integer billId){
+        BillBookExample billBookExample = new BillBookExample();
+        billBookExample.createCriteria().andBillIdEqualTo(billId);
+        List<BillBook> billBooks = billBookMapper.selectByExample(billBookExample);
+        List<BillBookVO> billBookVOList=new ArrayList<>();
+        for (BillBook billBook : billBooks) {
+            BillBookVO billBookVO = new BillBookVO();
+            billBookVO.setNumber(billBook.getCount());
+            billBookVO.setAmount(billBook.getAmount());
+            Book book = bookMapper.selectByPrimaryKey(billBook.getBookId());
+            billBookVO.setBookName(book.getName());
+            billBookVO.setSinglePrice(book.getPrice());
+            billBookVO.setPrecess(book.getPress());
+            billBookVO.setAuthor(book.getAuthor());
+            billBookVOList.add(billBookVO);
+        }
+        return billBookVOList;
+    }
 
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void payForBill(Integer billId){
+        Bill bill = billMapper.selectByPrimaryKey(billId);
+        bill.setStatus("已支付");
+        bill.setPayTime(new Date());
+        billMapper.updateByPrimaryKeySelective(bill);
+    }
 }

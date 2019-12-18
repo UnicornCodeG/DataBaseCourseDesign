@@ -9,14 +9,14 @@ package com.bookmarketsys.databasejob.vo;
 public class SettlementAmountVO {
     private Integer bookId;
     private Integer number;
-    private Double amount;
+    private Double singlePrice;//单价
 
-    public Double getAmount() {
-        return amount;
+    public Double getSinglePrice() {
+        return singlePrice;
     }
 
-    public void setAmount(Double amount) {
-        this.amount = amount;
+    public void setSinglePrice(Double singlePrice) {
+        this.singlePrice = singlePrice;
     }
 
     public Integer getBookId() {

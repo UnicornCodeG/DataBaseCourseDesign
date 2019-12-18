@@ -1,6 +1,7 @@
 package com.bookmarketsys.databasejob.service.serviceImpl;
 
 import com.bookmarketsys.databasejob.mapper.BookMapper;
+import com.bookmarketsys.databasejob.mapper.MenuMapper;
 import com.bookmarketsys.databasejob.pojo.Book;
 import com.bookmarketsys.databasejob.pojo.BookExample;
 import com.bookmarketsys.databasejob.service.BookAdminOprService;
@@ -15,6 +16,8 @@ public class BookAdminOprServiceImpl implements BookAdminOprService {
 
     @Autowired
     BookMapper bookMapper;
+    @Autowired
+    MenuMapper menuMapper;
     @Override
     public Book addBook(Book book) {
         bookMapper.insert(book);
@@ -68,9 +71,11 @@ public class BookAdminOprServiceImpl implements BookAdminOprService {
     public List<Book> selectBookByMenuId(Integer menuId) {
         BookExample bookExample = new BookExample();
         bookExample.createCriteria().andMenuIdEqualTo(menuId);
-
         List<Book> bookList = bookMapper.selectByExample(bookExample);
-
+        for (Book book : bookList) {
+            String menuName = menuMapper.selectByPrimaryKey(book.getMenuId()).getMenuName();
+            book.setMenuName(menuName);
+        }
         return bookList;
     }
     @Override
@@ -78,8 +83,12 @@ public class BookAdminOprServiceImpl implements BookAdminOprService {
 
         BookExample bookExample=new BookExample();
         bookExample.createCriteria().andNameLike(bookName);
-        List <Book> book =bookMapper.selectByExample(bookExample);
-        return book;
+        List <Book> bookList =bookMapper.selectByExample(bookExample);
+        for (Book book : bookList) {
+            String menuName = menuMapper.selectByPrimaryKey(book.getMenuId()).getMenuName();
+            book.setMenuName(menuName);
+        }
+        return bookList;
     }
 
 }

@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.bookmarketsys.databasejob.dto.ShoppingCartUserIdMenuIdDTO;
 import com.bookmarketsys.databasejob.service.ShoppingCartService;
 import com.bookmarketsys.databasejob.util.Result;
-import com.bookmarketsys.databasejob.util.ResultEnum;
 import com.bookmarketsys.databasejob.util.ResultUtil;
 import com.bookmarketsys.databasejob.vo.*;
 import org.slf4j.Logger;
@@ -12,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.SetOperations;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,7 +39,6 @@ public class ShoppingCartController {
         String shoppingCartUserKey="shoppingCart:" + userId;
         System.out.println(userId);
         ListOperations listOperations = redisTemplate.opsForList();
-
         List<List<String>> range = listOperations.range(shoppingCartUserKey, 0, -1);
         List<ShowShoppingCartVO> cartVOList = shoppingCartService.showBookInfomation(range);
 
@@ -156,7 +155,7 @@ public class ShoppingCartController {
 
 
     //减少数量
-    @RequestMapping("/decrBookNumber")
+    /*@RequestMapping("/decrBookNumber")
     public Result decrBookNumber(Integer userId,Integer bookId,Integer menuId,Integer number){
         if (number==1) return ResultUtil.error(ResultEnum.ERROR.getCode(),"数量为1，不能再减少");
         ListOperations listOperations = redisTemplate.opsForList();
@@ -168,7 +167,7 @@ public class ShoppingCartController {
         int index = range.indexOf(jsonString);
         listOperations.set(shoppingCartUserMenuKey,index,JSON.toJSONString(new ShoppingCartUserIdMenuIdDTO().setBookId(bookId).setNumber(number-1)));
         return ResultUtil.success();
-    }
+    }*/
 
 
     //结算金额
@@ -204,6 +203,17 @@ public class ShoppingCartController {
         return ResultUtil.success(countNumber);
     }
 
+    //根据订单id展示订单内的详细书本信息
+    @RequestMapping("/selectBillBookDetail")
+    public Result selectBillBookDetail(Integer billId) {
+        List<BillBookVO> billBookVOList = shoppingCartService.selectBillBookDetail(billId);
+        return ResultUtil.success(billBookVOList);
+    }
 
-
+    //支付订单
+    @RequestMapping("/payForBill")
+    public Result payForBill(Integer billId) {
+        shoppingCartService.payForBill(billId);
+        return ResultUtil.success("支付成功");
+    }
 }

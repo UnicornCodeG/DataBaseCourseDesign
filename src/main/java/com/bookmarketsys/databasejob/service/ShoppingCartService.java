@@ -1,5 +1,6 @@
 package com.bookmarketsys.databasejob.service;
 
+import com.bookmarketsys.databasejob.vo.BillBookVO;
 import com.bookmarketsys.databasejob.vo.CreateOrderVo;
 import com.bookmarketsys.databasejob.vo.SettlementAmountVO;
 import com.bookmarketsys.databasejob.vo.ShowShoppingCartVO;
@@ -16,4 +17,10 @@ public interface ShoppingCartService {
 
     //显示购物车内的书本信息
     List<ShowShoppingCartVO> showBookInfomation(List<List<String>> list);
+
+    //显示订单中的书本信息
+    List<BillBookVO> selectBillBookDetail(Integer billId);
+
+    //支付订单
+    void payForBill(Integer billId);
 }
