@@ -8,6 +8,7 @@ import com.bookmarketsys.databasejob.service.BookAdminOprService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -44,7 +45,8 @@ public class BookAdminOprServiceImpl implements BookAdminOprService {
         Book book1=selectBook(book.getId());
         if(book1==null)return null;            //如果没有这本书，则返回null
        // BookExample bookExample=new BookExample();
-        int res=bookMapper.updateByPrimaryKey(book);
+        book.setCreateTime(new Date());
+        int res=bookMapper.updateByPrimaryKeySelective(book);
         return book;                //返回更新结果
 
     }

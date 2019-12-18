@@ -1,5 +1,6 @@
 package com.bookmarketsys.databasejob.vo;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -8,12 +9,14 @@ import java.util.List;
  * @Author 龚佳民
  * @Date 2019/12/12
  **/
-public class CreateOrderVo {
+public class CreateOrderVo implements Serializable {
     private List<SettlementAmountVO> settlementAmountVO;
     private Double amount;//整个订单的总价
     private Integer userId;
     private String note;
 
+    public CreateOrderVo() {
+    }
 
     public String getNote() {
         return note;

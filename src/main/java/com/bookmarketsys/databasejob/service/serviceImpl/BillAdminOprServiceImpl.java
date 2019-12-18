@@ -58,7 +58,7 @@ public class BillAdminOprServiceImpl implements BillAdminOprService {
 
     @Override
     public Bill updateBill(Bill bill) {
-        int i = billMapper.updateByPrimaryKey(bill);
+        int i = billMapper.updateByPrimaryKeySelective(bill);
         if (i == 0){
             return null;
         }else {
@@ -91,6 +91,9 @@ public class BillAdminOprServiceImpl implements BillAdminOprService {
         BillExample billExample = new BillExample();
         billExample.createCriteria().andStatusEqualTo(status);
         List<Bill> bills = billMapper.selectByExample(billExample);
+        for (Bill bill : bills) {
+            bill.setUserName(userMapper.selectByPrimaryKey(bill.getUserId()).getUserName());
+        }
         return bills;
     }
     @Override

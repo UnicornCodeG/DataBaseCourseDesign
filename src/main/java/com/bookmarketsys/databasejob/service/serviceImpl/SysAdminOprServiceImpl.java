@@ -1,6 +1,6 @@
 package com.bookmarketsys.databasejob.service.serviceImpl;
 
-import com.bookmarketsys.databasejob.mapper.MenuMapper;
+import com.bookmarketsys.databasejob.mapper.RoleMapper;
 import com.bookmarketsys.databasejob.mapper.UserMapper;
 import com.bookmarketsys.databasejob.pojo.User;
 import com.bookmarketsys.databasejob.pojo.UserExample;
@@ -8,6 +8,7 @@ import com.bookmarketsys.databasejob.service.SysAdminOprService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -21,7 +22,7 @@ public class SysAdminOprServiceImpl implements SysAdminOprService {
     @Autowired
     UserMapper userMapper;
     @Autowired
-    MenuMapper menuMapper;
+    RoleMapper roleMapper;
     @Override
     public User deleteBillAdmin(int id) {
         User user = userMapper.selectByPrimaryKey(id);
@@ -92,8 +93,8 @@ public class SysAdminOprServiceImpl implements SysAdminOprService {
         userExample.createCriteria().andRoleIdEqualTo(roleId);
         List<User> userList = userMapper.selectByExample(userExample);
         for (User user : userList) {
-            String menuName = menuMapper.selectByPrimaryKey(user.getRoleId()).getMenuName();
-            user.setMenuName(menuName);
+            String roleName = roleMapper.selectByPrimaryKey(user.getRoleId()).getRoleName();
+            user.setRoleName(roleName);
         }
         return userList;
     }
@@ -114,10 +115,16 @@ public class SysAdminOprServiceImpl implements SysAdminOprService {
         userExample.createCriteria().andUserNameLike(username);
         List<User> users=userMapper.selectByExample(userExample);
         for (User user : users) {
-            String menuName = menuMapper.selectByPrimaryKey(user.getRoleId()).getMenuName();
-            user.setMenuName(menuName);
+            String roleName = roleMapper.selectByPrimaryKey(user.getRoleId()).getRoleName();
+            user.setRoleName(roleName);
         }
         return  users;
 
+    }
+
+    @Override
+    public void updateAdmin(User user) {
+        user.setCreateTime(new Date());
+        userMapper.updateByPrimaryKeySelective(user);
     }
 }

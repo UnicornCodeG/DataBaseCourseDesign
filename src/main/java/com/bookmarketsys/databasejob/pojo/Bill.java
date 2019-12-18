@@ -8,7 +8,7 @@ public class Bill {
     private Integer id;
 
     private Integer userId;
-
+    private String userName;
     private String note;
 
     @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss" ,timezone = "GMT+8")
@@ -27,6 +27,14 @@ public class Bill {
     private Date updateTime;
 
     private String updateOpr;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
     public Integer getId() {
         return id;

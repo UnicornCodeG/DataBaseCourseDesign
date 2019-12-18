@@ -1,5 +1,6 @@
 package com.bookmarketsys.databasejob.service;
 
+import com.bookmarketsys.databasejob.pojo.Bill;
 import com.bookmarketsys.databasejob.vo.BillBookVO;
 import com.bookmarketsys.databasejob.vo.CreateOrderVo;
 import com.bookmarketsys.databasejob.vo.SettlementAmountVO;
@@ -23,4 +24,6 @@ public interface ShoppingCartService {
 
     //支付订单
     void payForBill(Integer billId);
+
+    List<Bill> selectByUserAndStatus(String status,Integer userId);
 }

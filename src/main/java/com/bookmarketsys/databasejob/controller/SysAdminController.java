@@ -121,4 +121,10 @@ public class SysAdminController {
         }
         return ResultUtil.success(users);
     }
+    @RequestMapping("/updateAdmin")
+    Result updateAdmin(@RequestBody User user){
+        System.out.println(user.getId());
+        sysAdminOprService.updateAdmin(user);
+        return ResultUtil.success("管理员更新成功");
+    }
 }

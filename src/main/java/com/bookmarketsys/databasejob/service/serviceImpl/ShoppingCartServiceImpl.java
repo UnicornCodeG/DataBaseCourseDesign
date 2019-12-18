@@ -13,10 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @ClassName ShoppingCartServiceImpl
@@ -50,16 +47,16 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         bill.setAmount(amount);
         bill.setUserId(userId);
         bill.setNote(createOrderVo.getNote());
-        bill.setStatus("未支付");
+        bill.setStatus("nopay");
         User user = userMapper.selectByPrimaryKey(userId);
         bill.setCreateOpr(user.getUserName());
         Date createTime = new Date();
         bill.setCreateTime(createTime);
-        billMapper.insert(bill);
-
         BillExample billExample = new BillExample();
-        billExample.createCriteria().andUserIdEqualTo(userId).andCreateTimeEqualTo(createTime);
-        Integer billId = billMapper.selectByExample(billExample).get(0).getId();
+        int i = billMapper.countByExample(billExample);
+        Integer billId=i+1;
+        bill.setId(billId);
+        billMapper.insert(bill);
 
         for (SettlementAmountVO settlementAmountVO : settlementAmountVOList) {
             Integer bookId = settlementAmountVO.getBookId();
@@ -74,6 +71,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
             billBook.setCreateTime(new Date());
             billBookMapper.insert(billBook);
         }
+
     }
 
     //结算金额
@@ -141,8 +139,16 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     @Transactional(rollbackFor = Exception.class)
     public void payForBill(Integer billId){
         Bill bill = billMapper.selectByPrimaryKey(billId);
-        bill.setStatus("已支付");
+        bill.setStatus("pay");
         bill.setPayTime(new Date());
         billMapper.updateByPrimaryKeySelective(bill);
+    }
+
+    @Override
+    public List<Bill> selectByUserAndStatus(String status, Integer userId) {
+        BillExample billExample = new BillExample();
+        billExample.createCriteria().andUserIdEqualTo(userId).andStatusEqualTo(status);
+        List<Bill> bills = billMapper.selectByExample(billExample);
+        return bills;
     }
 }

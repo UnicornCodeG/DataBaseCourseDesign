@@ -21,14 +21,14 @@ public class User {
 
     private String telphone;
 
-    private String menuName;
+    private String roleName;
 
-    public String getMenuName() {
-        return menuName;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setMenuName(String menuName) {
-        this.menuName = menuName;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
     @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss" ,timezone = "GMT+8")

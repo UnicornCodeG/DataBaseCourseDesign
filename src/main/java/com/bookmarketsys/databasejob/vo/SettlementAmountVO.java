@@ -9,7 +9,16 @@ package com.bookmarketsys.databasejob.vo;
 public class SettlementAmountVO {
     private Integer bookId;
     private Integer number;
+    private Integer menuId;
     private Double singlePrice;//单价
+
+    public Integer getMenuId() {
+        return menuId;
+    }
+
+    public void setMenuId(Integer menuId) {
+        this.menuId = menuId;
+    }
 
     public Double getSinglePrice() {
         return singlePrice;

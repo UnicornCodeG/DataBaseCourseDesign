@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b17540e9-9fdc-4af9-af49-737e9fe83c5a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/controller/ShoppingCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/controller/ShoppingCartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/controller/SysAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/controller/SysAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/pojo/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/pojo/Bill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/pojo/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/ShoppingCartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/ShoppingCartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/SysAdminOprService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/SysAdminOprService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/BillAdminOprServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/BillAdminOprServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/BookAdminOprServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/BookAdminOprServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/ShoppingCartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/ShoppingCartServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/SysAdminOprServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/SysAdminOprServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/vo/CreateOrderVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/vo/CreateOrderVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/vo/SettlementAmountVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/vo/SettlementAmountVO.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,21 +89,21 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IDEA Demo\BookMarketSys\src\main\java\com\bookmarketsys\databasejob\service\serviceImpl" />
+      <recent name="D:\IDEA Demo\BookMarketSys\src\main\java\com\bookmarketsys\databasejob\service" />
+      <recent name="D:\IDEA Demo\BookMarketSys\src\main\java\com\bookmarketsys\databasejob\controller" />
+      <recent name="D:\IDEA Demo\BookMarketSys\src\main\resources\static\img\simple" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.bookmarketsys.databasejob.mapper" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IDEA Demo\BookMarketSys\src\main\resources\db" />
       <recent name="D:\IDEA Demo\BookMarketSys\src\main\resources\static\img\simple" />
       <recent name="D:\IDEA Demo\BookMarketSys\src\main\java\com\bookmarketsys\databasejob\controller" />
       <recent name="D:\IDEA Demo\BookMarketSys\src\main\java\com\bookmarketsys\databasejob\service" />
       <recent name="D:\IDEA Demo\BookMarketSys\src\main\java\com\bookmarketsys\databasejob\service\serviceImpl" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.bookmarketsys.databasejob.mapper" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IDEA Demo\BookMarketSys\src\main\java\com\bookmarketsys\databasejob\service\serviceImpl" />
-      <recent name="D:\IDEA Demo\BookMarketSys\src\main\java\com\bookmarketsys\databasejob\service" />
-      <recent name="D:\IDEA Demo\BookMarketSys\src\main\java\com\bookmarketsys\databasejob\controller" />
-      <recent name="D:\IDEA Demo\BookMarketSys\src\main\resources\static\img\simple" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -106,7 +118,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.DatabasejobApplication">
+  <component name="RunManager" selected="JUnit.LoginServiceImplTest.test02">
     <configuration name="IndexServiceImplTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BookMarketSys" />
       <extension name="coverage">
@@ -252,7 +264,9 @@
       <workItem from="1576476410007" duration="4321000" />
       <workItem from="1576484171920" duration="23186000" />
       <workItem from="1576552524364" duration="23669000" />
-      <workItem from="1576627720023" duration="5532000" />
+      <workItem from="1576627720023" duration="21604000" />
+      <workItem from="1576659620742" duration="156000" />
+      <workItem from="1576660895774" duration="14636000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0初次提交">
       <created>1575448873112</created>
@@ -296,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576633054249</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="v1.3.1小修改">
+      <created>1576633291471</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1576633291471</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +342,7 @@
     <MESSAGE value="v1.1.1添加数据库脚本，路径：/resources/db" />
     <MESSAGE value="v1.2对后台管理进行修改" />
     <MESSAGE value="v1.3对订单部分进行修改调整" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.3对订单部分进行修改调整" />
+    <MESSAGE value="v1.3.1小修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.3.1小修改" />
   </component>
 </project>

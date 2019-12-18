@@ -2,6 +2,7 @@ package com.bookmarketsys.databasejob.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.bookmarketsys.databasejob.dto.ShoppingCartUserIdMenuIdDTO;
+import com.bookmarketsys.databasejob.pojo.Bill;
 import com.bookmarketsys.databasejob.service.ShoppingCartService;
 import com.bookmarketsys.databasejob.util.Result;
 import com.bookmarketsys.databasejob.util.ResultUtil;
@@ -107,7 +108,6 @@ public class ShoppingCartController {
             String jsonString = JSON.toJSONString(new ShoppingCartUserIdMenuIdDTO().setBookId(vo.getBookId()).setNumber(vo.getNumber()));
             listOperations.remove(shoppingCartUserMenuKey,1,jsonString);
             List afterRemoveUserMenuRange = listOperations.range(shoppingCartUserMenuKey, 0, -1);
-            System.out.println(afterRemoveUserMenuRange.size());
             listOperations.set(shoppingCartUserKey,userIndex,afterRemoveUserMenuRange);
             listOperations.remove(shoppingCartUserKey,1,new ArrayList<>());
         }
@@ -178,8 +178,39 @@ public class ShoppingCartController {
 
     //生成订单
     @RequestMapping("/createOrder")
-    public Result createOrder(@RequestBody CreateOrderVo createOrderVo){
-        shoppingCartService.createOrder(createOrderVo);
+    public Result createOrder(@RequestBody CreateOrderVo createOrderVo) throws Exception {
+        ListOperations listOperations = redisTemplate.opsForList();
+        Integer userId = createOrderVo.getUserId();
+        //该用户下的购物车的key
+        String shoppingCartUserKey="shoppingCart:" + userId;
+        List<SettlementAmountVO> settlementAmountVO = createOrderVo.getSettlementAmountVO();
+        try {
+            shoppingCartService.createOrder(createOrderVo);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new Exception(e);
+        }
+        //删除购物车中的信息
+        for (SettlementAmountVO amountVO : settlementAmountVO) {
+            Integer menuId = amountVO.getMenuId();
+            Integer bookId = amountVO.getBookId();
+            Integer number = amountVO.getNumber();
+            //该用户下的指定类型图书list的key
+            String shoppingCartUserMenuKey="shoppingCart:" + userId + ":" + menuId;
+
+            //得到该书的menu所在购物车中的位置
+            List range = listOperations.range(shoppingCartUserMenuKey, 0, -1);
+            int indexOfUserKey = listOperations.range(shoppingCartUserKey, 0, -1).indexOf(range);
+
+            //先删除menu下的book
+            listOperations.remove(shoppingCartUserMenuKey,1,
+                    JSON.toJSONString(new ShoppingCartUserIdMenuIdDTO().setBookId(bookId).setNumber(number)));
+            //再替换user下的list
+            listOperations.set(shoppingCartUserKey,indexOfUserKey,
+                    listOperations.range(shoppingCartUserMenuKey, 0, -1));
+
+            listOperations.remove(shoppingCartUserKey,1,new ArrayList<>());
+        }
         return ResultUtil.success();
     }
 
@@ -214,5 +245,11 @@ public class ShoppingCartController {
     public Result payForBill(Integer billId) {
         shoppingCartService.payForBill(billId);
         return ResultUtil.success("支付成功");
+    }
+    //查询当前用户的订单
+    @RequestMapping("/selectByUserAndStatus")
+    Result selectByUserAndStatus(String status,Integer userId){
+        List<Bill> bills = shoppingCartService.selectByUserAndStatus(status, userId);
+        return ResultUtil.success(bills);
     }
 }

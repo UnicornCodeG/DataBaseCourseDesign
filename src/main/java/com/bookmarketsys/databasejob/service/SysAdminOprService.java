@@ -24,4 +24,5 @@ public interface SysAdminOprService {
 
 
     List<User> selectAdminLike(String username);
+    void updateAdmin(User user);
 }
