@@ -17,6 +17,7 @@ public interface BookAdminOprService {
     Book updateBook(Book book);
     Book selectBook(int id);
     List<Book> selectAllBook();
+    List<Book> selectBookByMenuId(Integer menuId);
 
-
+    List<Book> selectBookLike(String bookName);
 }

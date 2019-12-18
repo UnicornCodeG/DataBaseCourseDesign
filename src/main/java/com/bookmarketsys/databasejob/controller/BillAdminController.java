@@ -91,7 +91,24 @@ public class BillAdminController {
             return ResultUtil.error(ResultEnum.ERROR.getCode(),"服务器开小差了");
         }
         return ResultUtil.success(bills);
-
+    }
+    @RequestMapping("/selectByStatus")
+    Result selectByStatus(String status){
+        List<Bill> bills = billAdminOprService.selectByStatus(status);
+        return ResultUtil.success(bills);
     }
 
+    @RequestMapping("/selectBillLike")
+    Result selectBillLike(String userName){
+
+        List<Bill> bills ;
+        try {
+            bills=billAdminOprService.selectBillLike(userName);
+        }catch (Exception e){
+            e.printStackTrace();
+            return ResultUtil.error(ResultEnum.ERROR.getCode(),"服务器开小差了");
+        }
+        return ResultUtil.success(bills);
+
+    }
 }

@@ -17,6 +17,7 @@ public interface BillAdminOprService {
     Bill updateBill(Bill bill);
     Bill addBill(Bill bill);
     List<Bill> selectAllBill();
-
+    List<Bill> selectByStatus(String status);
+    List<Bill> selectBillLike(String username);
 
 }

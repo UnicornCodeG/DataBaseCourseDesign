@@ -97,6 +97,28 @@ public class BookAdminController {
 
     }
 
+    @RequestMapping("/selectBookByMenuId")
+    Result selectBookByMenuId(Integer menuId){
+
+        List<Book> bookList = bookAdminOprService.selectBookByMenuId(menuId);
+
+        return ResultUtil.success(bookList);
+
+    }
+    @RequestMapping("/selectBookLike")
+    Result selectBookLike(String bookName){
+        List<Book> books ;
+
+        try {
+            books= bookAdminOprService.selectBookLike(bookName);
+        }catch (Exception e){
+            e.printStackTrace();
+            return ResultUtil.error(ResultEnum.ERROR.getCode(),"服务器开小差了");
+        }
+        return ResultUtil.success(books);
+
+    }
+
 }
 
 

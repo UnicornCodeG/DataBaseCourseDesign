@@ -84,6 +84,14 @@ public class SysAdminOprServiceImpl implements SysAdminOprService {
         return users;
     }
 
+    @Override
+    public List<User> selectByRoleId(Integer roleId) {
+        UserExample userExample = new UserExample();
+        userExample.createCriteria().andRoleIdEqualTo(roleId);
+        List<User> userList = userMapper.selectByExample(userExample);
+        return userList;
+    }
+
 
     @Override
     public User insertBookAdmin(User bookAdmin) {
@@ -93,5 +101,13 @@ public class SysAdminOprServiceImpl implements SysAdminOprService {
         }else {
             return bookAdmin;
         }
+    }
+    @Override
+    public List<User> selectAdminLike(String username) {
+        UserExample userExample=new UserExample();
+        userExample.createCriteria().andUserNameLike(username);
+        List<User> users=userMapper.selectByExample(userExample);
+        return  users;
+
     }
 }

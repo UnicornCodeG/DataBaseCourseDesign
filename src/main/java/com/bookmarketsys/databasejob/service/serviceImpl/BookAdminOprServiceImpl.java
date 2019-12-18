@@ -62,9 +62,24 @@ public class BookAdminOprServiceImpl implements BookAdminOprService {
             bookExample.createCriteria().getAllCriteria();
             List<Book> books=bookMapper.selectByExample(bookExample);
             return books;
-
-
     }
 
+    @Override
+    public List<Book> selectBookByMenuId(Integer menuId) {
+        BookExample bookExample = new BookExample();
+        bookExample.createCriteria().andMenuIdEqualTo(menuId);
+
+        List<Book> bookList = bookMapper.selectByExample(bookExample);
+
+        return bookList;
+    }
+    @Override
+    public List<Book> selectBookLike(String bookName) {
+
+        BookExample bookExample=new BookExample();
+        bookExample.createCriteria().andNameLike(bookName);
+        List <Book> book =bookMapper.selectByExample(bookExample);
+        return book;
+    }
 
 }

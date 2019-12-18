@@ -1,5 +1,7 @@
 package com.bookmarketsys.databasejob.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Book {
@@ -21,10 +23,12 @@ public class Book {
 
     private Double price;
 
+    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss" ,timezone = "GMT+8")
     private Date createTime;
 
     private String createOpr;
 
+    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss" ,timezone = "GMT+8")
     private Date updateTime;
 
     private String updateOpr;

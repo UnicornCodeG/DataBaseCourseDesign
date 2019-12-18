@@ -20,10 +20,8 @@ public interface SysAdminOprService {
     User insertBookAdmin(User bookAdmin);      //插入图书管理员
     User insertBillAdmin(User billAdmin);      //插入订单管理员
     List<User> selectAllAdmin();
+    List<User> selectByRoleId(Integer roleId);
 
 
-
-
-
-
+    List<User> selectAdminLike(String username);
 }

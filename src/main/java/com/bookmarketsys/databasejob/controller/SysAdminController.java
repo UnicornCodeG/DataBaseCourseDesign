@@ -101,6 +101,24 @@ public class SysAdminController {
             return ResultUtil.error(ResultEnum.ERROR.getCode(),"服务器开小差了");
         }
         return ResultUtil.success(users);
+    }
 
+    @RequestMapping("/selectByRoleId")
+    public Result selectByRoleId(Integer roleId){
+        List<User> userList = sysAdminOprService.selectByRoleId(roleId);
+        return ResultUtil.success(userList);
+    }
+
+    @RequestMapping("/selectAdminLike")
+    Result selectAdminLike(String userName) {
+        List<User> users;
+
+        try {
+            users = sysAdminOprService.selectAdminLike(userName);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResultUtil.error(ResultEnum.ERROR.getCode(), "服务器开小差了");
+        }
+        return ResultUtil.success(users);
     }
 }

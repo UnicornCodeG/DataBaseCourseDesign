@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b17540e9-9fdc-4af9-af49-737e9fe83c5a" name="Default Changelist" comment="v1.1大致情况已完成，进行整合工作并查漏补缺">
+    <list default="true" id="b17540e9-9fdc-4af9-af49-737e9fe83c5a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/controller/BillAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/controller/BillAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/controller/BookAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/controller/BookAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/controller/SysAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/controller/SysAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/pojo/BillBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/pojo/BillBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/pojo/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/pojo/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/pojo/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/BillAdminOprService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/BillAdminOprService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/BookAdminOprService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/BookAdminOprService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/SysAdminOprService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/SysAdminOprService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/BillAdminOprServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/BillAdminOprServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/BookAdminOprServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/BookAdminOprServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/LoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/SysAdminOprServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookmarketsys/databasejob/service/serviceImpl/SysAdminOprServiceImpl.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,11 +100,11 @@
       <recent name="com.bookmarketsys.databasejob.mapper" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEA Demo\BookMarketSys\src\main\resources\db" />
       <recent name="D:\IDEA Demo\BookMarketSys\src\main\resources\static\img\simple" />
       <recent name="D:\IDEA Demo\BookMarketSys\src\main\java\com\bookmarketsys\databasejob\controller" />
       <recent name="D:\IDEA Demo\BookMarketSys\src\main\java\com\bookmarketsys\databasejob\service" />
       <recent name="D:\IDEA Demo\BookMarketSys\src\main\java\com\bookmarketsys\databasejob\service\serviceImpl" />
-      <recent name="D:\IDEA Demo\BookMarketSys\src\main\java\com\bookmarketsys\databasejob\util" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -106,7 +119,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LoginServiceImplTest.test02">
+  <component name="RunManager" selected="Spring Boot.DatabasejobApplication">
     <configuration name="IndexServiceImplTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BookMarketSys" />
       <extension name="coverage">
@@ -251,7 +264,8 @@
       <workItem from="1576468529217" duration="4437000" />
       <workItem from="1576476410007" duration="4321000" />
       <workItem from="1576484171920" duration="23186000" />
-      <workItem from="1576552524364" duration="18599000" />
+      <workItem from="1576552524364" duration="23669000" />
+      <workItem from="1576627720023" duration="487000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0初次提交">
       <created>1575448873112</created>
@@ -274,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576582815869</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="v1.1.1添加数据库脚本，路径：/resources/db">
+      <created>1576585146426</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1576585146426</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +317,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v1.0初次提交" />
     <MESSAGE value="v1.1大致情况已完成，进行整合工作并查漏补缺" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.1大致情况已完成，进行整合工作并查漏补缺" />
+    <MESSAGE value="v1.1.1添加数据库脚本，路径：/resources/db" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.1.1添加数据库脚本，路径：/resources/db" />
   </component>
 </project>

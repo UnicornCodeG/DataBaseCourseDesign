@@ -7,6 +7,7 @@ import com.bookmarketsys.databasejob.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -23,6 +24,7 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public void register(User user) {
+        user.setCreateTime(new Date());
         userMapper.insert(user);
     }
 
